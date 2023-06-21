@@ -1,4 +1,5 @@
 ---
-title: Welcome to my blog
+title: pop %ebp ; let the chaos begin
 ---
 
+Official blog is offline, enjoy this backup...
