@@ -1,5 +1,5 @@
 ---
-; let the chaos begin
+title: "; let the chaos begin"
 ---
 
 Official blog is offline, enjoy this backup...
