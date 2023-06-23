@@ -1,6 +1,8 @@
 ---
 title: And another one hits the dust...
 date: 21 Jun 2023
+tags:
+  - system-administration
 ---
 
 It's only been a year that I moved my server to a new location from the original data center it was colocated at.
