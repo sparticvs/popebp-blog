@@ -2,6 +2,6 @@ title: pop %ebp
 description: musings of a security nerd
 page_excerpts: true
 base_url: "http://popebp.com/"
-remote_theme: jekyllt/jasper2@gh-pages
+remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll@gh-pages
 plugins:
 - jekyll-remote-theme
