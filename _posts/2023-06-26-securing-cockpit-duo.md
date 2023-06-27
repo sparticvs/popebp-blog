@@ -21,3 +21,9 @@ Now the last action is to restart cockpit to load in the new configuration.
 ```
 # systemctl restart cockpit.socket
 ```
+
+And that's it!
+
+## But There's a Catch
+
+People should really be aware of the very real risk here to your system with exposed web-based admin panels...it's like exposing your IPMI interface to the internet...you should be aware of the risks before doing so. You could potentially be allowing an attacker to directly pivot into your network. Without the appropriate controls in place, there is more than just that host at risk.
