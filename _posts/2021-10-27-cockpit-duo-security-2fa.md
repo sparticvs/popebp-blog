@@ -6,6 +6,9 @@ tags:
   - system-administration
 ---
 ![Cockpit-Duo](https://github.com/sparticvs/popebp-blog/assets/847020/3b9e430d-971e-4dba-ba9f-bdd5524adbb5)
+
+| **Security Hardening** Please also read my [new post](https://github.com/sparticvs/popebp-blog/blob/post/securing-cockpit-duo/_posts/2023-06-26-securing-cockpit-duo.md) about security gotchas in Cockpit |
+
 ## Background
 For regular visitors you may have noticed that over the past couple weeks, things have been offline. I left my previous job and with that change, there has been some additional changes that I made. I recalled the server from the datacenter and set it up locally to act more as a lab host. After some inspection, I found a drive was failing so I swapped it out and restored the OpenZFS RAID-Z2. After resilvering completed, I rebooted the machine to update to the latest kernel, and that is when everything went south.
 
