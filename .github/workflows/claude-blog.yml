@@ -1,0 +1,56 @@
+name: Claude Blog Optimizer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_posts/**'
+
+jobs:
+  optimize-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Need previous commit to detect changed files
+
+      - name: Get changed post files
+        id: changed-files
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '_posts/*.md' '_posts/*.html' | head -5)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Run Claude on changed posts
+        if: steps.changed-files.outputs.files != ''
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_prompt: |
+            You are a Jekyll blog SEO and content optimizer.
+
+            The following blog post files were just pushed and need optimization:
+            ${{ steps.changed-files.outputs.files }}
+
+            For each file listed above:
+            1. Read the file contents
+            2. Analyze the post content carefully
+            3. Update ONLY the Jekyll front matter (the --- block at the top) with:
+               - `categories`: 1-3 broad categories as a YAML list (e.g. [tech, tutorial])
+               - `tags`: 5-10 specific tags as a YAML list relevant to the content
+               - `description`: A compelling 150-160 character meta description for SEO
+               - `title`: Keep existing title, but improve it for SEO if it's vague (otherwise leave it)
+               - `image`: Leave unchanged if present
+               - Do NOT add or remove any other front matter fields
+            4. Write the updated file back, preserving ALL post content exactly as-is
+
+            Rules:
+            - Only modify the front matter, never the post body
+            - Tags should be lowercase, hyphenated (e.g. machine-learning, not Machine Learning)
+            - Categories should be broad; tags should be specific
+            - If front matter already has good categories/tags/description, still review and improve if possible
+            - Commit your changes with message: "chore: optimize SEO and tags for [post filename]"
