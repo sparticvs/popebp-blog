@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-title: pop %ebp
-description: musings of a security nerd
-page_excerpts: true
-base_url: "http://popebp.com/"
-remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll@gh-pages
-plugins:
-- jekyll-remote-theme
-=======
 # The Site Configuration
 
 # Import the theme
