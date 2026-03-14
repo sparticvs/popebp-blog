@@ -3,8 +3,6 @@ name: Claude Blog Optimizer
 on:
   push:
     branches: [main]
-    paths:
-      - '_posts/**'
 
 jobs:
   optimize-post:
@@ -21,12 +19,10 @@ jobs:
       - name: Get changed post files
         id: changed-files
         run: |
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '_posts/*.md' '_posts/*.html' | head -5)
-          echo "files<<EOF" >> $GITHUB_OUTPUT
-          echo "$CHANGED" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          FILES=$(find _posts -name "*.md" -o -name "*.html" | tr '\n' ' ')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
 
-      - name: Run Claude on changed posts
+      - name: Run Claude on all posts
         if: steps.changed-files.outputs.files != ''
         uses: anthropics/claude-code-action@beta
         with:
