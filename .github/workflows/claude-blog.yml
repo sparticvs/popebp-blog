@@ -3,8 +3,6 @@ name: Claude Blog Optimizer
 on:
   pull_request:
     branches: [main]
-    paths:
-      - '_posts/**'
 
 jobs:
   optimize-post:
