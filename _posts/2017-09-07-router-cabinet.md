@@ -9,7 +9,7 @@ Creating a router cabinet seems to be every woodworkers first major journey in t
 ## Genesis
 I built my first router "table" when I was building my deck. Then, I need to put a chamfer on the ends of the slats that made up the skirt of the deck. The router table wasn't great, it wasn't large, hell it was made from scraps, but it got the job done.
 
-![The First Router "Table"]()
+<!-- ![The First Router "Table"]() -->
 
 As I used it, I slowly started building a list of requirements that a new one would need:
 
@@ -27,21 +27,22 @@ I popped open SketchUp and started designing. I borrowed some design ideas from 
 Looking through my stock, I had a sheet of 4' x 8' construction grade plywood, which was exactly the size I needed to make the cabinet. First task was to do the glue up of the top, as this was two pieces of plywood, laminated together. While that dried, I cut the rest of the carcass parts and started marking where the dados needed to be cut. Then I pulled out my router, setup the edge guide, and ran through all the dados.
 
 ## The Dry Fit
-![Dry Fit]()
+<!-- ![Dry Fit]() -->
 
 The dry fit went together smoothly, and I couldn't be happier with the fit. Before getting to the glue up, I cut a rabbet on the backside of the carcass to fit in the backer board.
 
 ## The Glue Up
 
-![Glue Up of the Top]()
+<!-- ![Glue Up of the Top]() -->
 
-![Glue Up of the Rest of the Carcass]()
+<!-- ![Glue Up of the Rest of the Carcass]() -->
 
 I glued it up without the need for much persuasion from the mallet. I pinned all of the joints (except the top) with brads to save from having to clamp it up (except the top). At this point, I decided to go ahead and install the 2" locking wheels that I bought for it. Ironically, I don't think I needed locking wheels.
 
 ## Getting Close
+<!--
 ![Router Lift and Wear Surface Installed]()
-
+-->
 JessEm sells a template for routing out the opening for the router plate. There are a few problems I had with this; First, there weren't any available; Second, they cost more than they should, it's bloody MDF. So I made a template to make the template so I could use that template to cut the opening. Confused yet? Double-sided tape was sufficient to hold the template in place, which was good, because I didn't have a lot of room to put the clamps and use it as a template with the router.
 
 After that, I cut in slot for the miter track and the T-slot tracks for holding down the fence.
@@ -49,13 +50,15 @@ After that, I cut in slot for the miter track and the T-slot tracks for holding 
 I also decided to add a wear surface from 1/4" hardboard, and I only screwed that down so that I could replace it as it wears.
 
 ## Drawer Construction
+<!--
 ![Drawers Assembled]()
-
+-->
 For a long time I played around with how I wanted to do the drawers. I kept thinking that I wanted vertical bit storage on the left and then do drawers on the right. But as I worked on how to make the bit storage like that, I was having problems and really wanted to get the project done. I changed my mind and decided to just do drawers on both sides. I was going to use drawer slides, but then I realized how small the drawers would be, cursed myself for not working them out in the SketchUp plans, and switched to the classic wood guides. This worked quite well, and I was pleased with the result.
 
 ## Final Touches
+<!--
 ![Finished Product]()
-
+-->
 Since the cabinet was made from plywood, I wanted to do some edge banding to hide the layers. All of the banding was glued and pinned, with the exception of the banding around the top, where I screwed that on, should I need to replace it if it gets beat up in time. I wired up the switch to an outlet that is inside the cabinet, for the router to plug into. The outlet is in a separate chamber from the dust collection, so fire is a not a concern.
 
 ## Lessons Learned
