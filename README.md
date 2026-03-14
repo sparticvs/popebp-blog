@@ -1,3 +1,8 @@
-Blog Content for PopEBP.com
+# pop %ebp; musings of a security nerd
 
-This is intended as a backup source for the blog.
+The blog.
+
+Theme is [chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
+
+Content licensed under CC BY-NC-SA 4.0.
+
