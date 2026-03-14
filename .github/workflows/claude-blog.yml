@@ -1,29 +1,23 @@
 name: Claude Blog Optimizer
 
 on:
-  push:
+  pull_request:
     branches: [main]
+    paths:
+      - '_posts/**'
 
 jobs:
   optimize-post:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
       id-token: write
 
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 2  # Need previous commit to detect changed files
 
-      - name: Get changed post files
-        id: changed-files
-        run: |
-          FILES=$(find _posts -name "*.md" -o -name "*.html" | tr '\n' ' ')
-          echo "files=$FILES" >> $GITHUB_OUTPUT
-
-      - name: Run Claude on all posts
-        if: steps.changed-files.outputs.files != ''
+      - name: Run Claude on changed posts
         uses: anthropics/claude-code-action@beta
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -31,24 +25,21 @@ jobs:
           direct_prompt: |
             You are a Jekyll blog SEO and content optimizer.
 
-            The following blog post files were just pushed and need optimization:
-            ${{ steps.changed-files.outputs.files }}
+            Look at the files changed in this pull request under _posts/.
 
-            For each file listed above:
+            For each changed post file:
             1. Read the file contents
             2. Analyze the post content carefully
             3. Update ONLY the Jekyll front matter (the --- block at the top) with:
-               - `categories`: 1-3 broad categories as a YAML list (e.g. [tech, tutorial])
+               - `categories`: 1-3 broad categories as a YAML list
                - `tags`: 5-10 specific tags as a YAML list relevant to the content
                - `description`: A compelling 150-160 character meta description for SEO
-               - `title`: Keep existing title, but improve it for SEO if it's vague (otherwise leave it)
-               - `image`: Leave unchanged if present
+               - `title`: Improve for SEO only if vague, otherwise leave it
                - Do NOT add or remove any other front matter fields
             4. Write the updated file back, preserving ALL post content exactly as-is
 
             Rules:
             - Only modify the front matter, never the post body
-            - Tags should be lowercase, hyphenated (e.g. machine-learning, not Machine Learning)
+            - Tags should be lowercase, hyphenated (e.g. machine-learning)
             - Categories should be broad; tags should be specific
-            - If front matter already has good categories/tags/description, still review and improve if possible
-            - Commit your changes with message: "chore: optimize SEO and tags for [post filename]"
+            - Commit your changes directly to this PR branch
