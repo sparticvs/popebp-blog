@@ -5,7 +5,9 @@ author: sparticvs
 tags:
   - system-administration
 ---
-![Cockpit-Duo](https://github.com/sparticvs/popebp-blog/assets/847020/3b9e430d-971e-4dba-ba9f-bdd5524adbb5)
+
+![Cockpit-Duo](/assets/img/posts/Cockpit-Duo.png)
+*Image by Charles Timko*
 
 | **Security Hardening** Please also read my [new post](https://github.com/sparticvs/popebp-blog/blob/post/securing-cockpit-duo/_posts/2023-06-26-securing-cockpit-duo.md) about security gotchas in Cockpit |
 
@@ -17,6 +19,10 @@ I found I wasn't able to boot anymore and the reason was that dracut didn't pack
 Part of the value of having the lab machine is to give me the ability to give presentations on campus here about security ops in a linux environment. I want to get to Cockpit remotely, but I also don't want to deal with someone brute-forcing the login and ultimately getting root access on the host. I want Two Factor Authentication (2FA) to work, but Cockpit doesn't have a plugin to enable this on a case-by-case basis. Instead, Cockpit's session management uses the local Pluggable Authentication Modules (PAM) to authenticate users to Cockpit. This means I need a PAM-based 2FA setup.
 
 In my research, I stumbled across a similar discussion on the [NethServer Community forums](https://community.nethserver.org/t/2fa-or-two-factor-authentication-with-cockpit/14172/3), although they were using Google Authenticator OTP (and later FreeOTP). This is was a great starting point, but I use Duo Security, and I want that up and running instead. That is what this blog focuses on.
+
+![Propeller](/assets/img/posts/propeller.jpg)
+*Photo by Metin Ozer / Unsplash*
+
 
 ## The Setup
 Assuming you don't have Cockpit up and running, you will need to start that:
